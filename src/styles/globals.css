@@ -1,0 +1,131 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Source Han Sans KR", "본고딕", system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+}
+
+:root {
+  color-scheme: light;
+  --radius: 0.5rem;
+  --background: #f6f3ed;
+  --foreground: #302e2b;
+  --primary: #383b33;
+  --primary-foreground: #faf9f6;
+  --secondary: #ede9e1;
+  --secondary-foreground: #302e2b;
+  --muted: #ede9e1;
+  --muted-foreground: #716b62;
+  --accent: #e9e5dc;
+  --accent-foreground: #302e2b;
+  --destructive: #b42318;
+  --border: #ded8cd;
+  --input: #ded8cd;
+  --ring: #767b68;
+}
+
+:root[data-theme='light'] {
+  --background: #ffffff;
+  --foreground: #292d28;
+  --primary: #383b33;
+  --primary-foreground: #ffffff;
+  --secondary: #f3f4f1;
+  --secondary-foreground: #292d28;
+  --muted: #f3f4f1;
+  --muted-foreground: #666c63;
+  --accent: #eff1eb;
+  --accent-foreground: #292d28;
+  --border: #dce0d8;
+  --input: #dce0d8;
+  --ring: #767b68;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --background: #1d201c;
+  --foreground: #e1e4db;
+  --primary: #c6cdb8;
+  --primary-foreground: #1d201c;
+  --secondary: #292e27;
+  --secondary-foreground: #e1e4db;
+  --muted: #292e27;
+  --muted-foreground: #a4ac9c;
+  --accent: #333b2f;
+  --accent-foreground: #e1e4db;
+  --destructive: #ff8b82;
+  --border: #424b3d;
+  --input: #424b3d;
+  --ring: #a0af8e;
+}
+
+:root[data-theme='gray'] {
+  color-scheme: dark;
+  --background: #303234;
+  --foreground: #e4e5e6;
+  --primary: #d0d3d5;
+  --primary-foreground: #303234;
+  --secondary: #3b3e40;
+  --secondary-foreground: #e4e5e6;
+  --muted: #3b3e40;
+  --muted-foreground: #afb4b8;
+  --accent: #464a4d;
+  --accent-foreground: #e4e5e6;
+  --destructive: #ff8b82;
+  --border: #555b60;
+  --input: #555b60;
+  --ring: #b2bcc3;
+}
+
+:root[data-theme='forest'] {
+  color-scheme: dark;
+  --background: #0d211a;
+  --foreground: #dce8df;
+  --primary: #b6d1be;
+  --primary-foreground: #0d211a;
+  --secondary: #182e24;
+  --secondary-foreground: #dce8df;
+  --muted: #182e24;
+  --muted-foreground: #a2b8a9;
+  --accent: #254033;
+  --accent-foreground: #dce8df;
+  --destructive: #ff8b82;
+  --border: #365344;
+  --input: #365344;
+  --ring: #98bda7;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply m-0 min-w-80 bg-background font-sans text-foreground antialiased;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+}
